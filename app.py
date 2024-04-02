@@ -4,7 +4,7 @@ import os
 app = Flask(__name__)
 
 # Folder where uploaded images will be stored
-UPLOAD_FOLDER = 'uploads'
+UPLOAD_FOLDER = '/mnt/azure-storage'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Check if the upload folder exists, if not, create it
@@ -29,7 +29,7 @@ def upload_file():
 
         # Save the file to the upload folder
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
-        
+
         return 'File uploaded successfully'
 
 if __name__ == '__main__':
