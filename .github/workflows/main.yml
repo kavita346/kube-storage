@@ -19,7 +19,7 @@ jobs:
        
     - name: Push Docker Image to Docker Hub
       run: |
-       docker tag hello-world "${{ secrets.DOCKER_USERNAME_SAI40 }}"/test-storage
+       docker tag test-storage "${{ secrets.DOCKER_USERNAME_SAI40 }}"/test-storage
        echo "${{ secrets.DOCKER_PASSWORD_TOKEN }}" | docker login -u "${{ secrets.DOCKER_USERNAME_SAI40 }}" --password-stdin
        docker push "${{ secrets.DOCKER_USERNAME_SAI40 }}"/test-storage
        
